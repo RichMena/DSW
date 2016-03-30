@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+    <script src="js/gamee.js"></script>
+    <link rel="stylesheet" href="estilos/estilos.css">
+    <link rel="stylesheet" href="estilos/estilos2.css">
+    <link rel="stylesheet" href="estilos/style.css">
+	<title>Lista de deseos</title>
+	<meta charset="utf-8"/>
+	<style >
+	body{
+ background-color:#266582;
+}
+.deseados{
+background-color:#252534;
+margin:2ex 2ex 2ex 2ex;
+ padding:0ex 3ex 3ex 0ex;
+height: 18ex;
+display:block;
+}
+#imagen2{
+	float:left;
+	display:inline-block;
+
+
+}
+#informacion{		
+	display:inline-block;
+}
+p{
+	font-weight:bold;
+	font-size: 150%;
+	color: white;
+}
+#boton2{
+	float:right;
+	display:inline-block;
+}
+#precioJuego{
+	font-size: 200%;
+}
+</style>
+</head>
+<body ng-controller="gameController">
+
+<div class="header">
+   <img src="img/globalheader_logo.png">
+   
+   <table >
+	 <tr>
+	    <td>TIENDA</td>
+		<td>COMUNIDAD</td>
+		<td>ACERCA DE</td>
+		<td>SOPORTE</td>
+	 </tr>
+  </table>
+  
+</div>
+
+	 <div class="menu">
+	<table>
+		<tr>
+			<td>Destacados</td>
+			<td class="juegos">Juegos</td>
+			<td>Noticias</td>
+			<td>Comprar</td>
+			<td>Vender</td>
+			<td>Videos</td>
+			<td>Foro</td>
+			
+			<td><div><input type="text" ng-model="test" style="background-color: #2A3F5A; ">  Buscar en la Tienda</input></div></td>
+		</tr>
+	</table>
+</div>
+
+<section id = "contenedor">
+<div>
+<ul class="deseados" ng-repeat="game in games">
+        <div id="imagen2">
+        <img ng-src={{game.imagen}}>
+        </div>
+		<div id="informacion">
+		<p>{{ game.nombre }}</p>
+		<p>{{ game.desarrollador }}</p>
+		</div>
+        <div id="boton2">
+        <p id="precioJuego">Precio:{{ game.precio }}$</p>
+        <button ng-click="comprar()">Comprar juego</button>
+        </div>
+</ul>
+</div>
+</section>
+
+<footer id="texto">
+	<p style="font-size: 100%;">©2016 JSR Corporation. Todos los derechos reservados. Todas las marcas registradas pertenecen a sus respectivos dueños en Colombia y otros países.Todos los precios incluyen IVA (donde sea aplicable).</p>
+	<center>
+	<p style="font-size: 100%;">Política de Privacidad   |   Información legal   |   Acuerdo de Suscriptor a Steam   |   Reembolsos</p>
+
+	<p style="font-size: 100%;">  Acerca de Valve   |  Soluciones para empresas   |  Steamworks   |  Empleo   | 	</p>
+	</center>
+	<center>
+		<md-button><img src="img/facebook.png" style="width: 40px;"></md-button>
+		<md-button><img src="img/twitter.png" style="width: 40px;"></md-button>
+	</center>
+</footer>
+
+
+
+<script src="js/module.js"></script>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+
+  <!-- Angular Material Library -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+  
+  <!-- Your application bootstrap  -->
+  <script type="text/javascript">    
+    /**
+     * You must include the dependency on 'ngMaterial' 
+     */
+    angular.module('BlankApp', ['ngMaterial']);
+  </script>
+
+  <!-- Scripts-->
+</body>
+</html>

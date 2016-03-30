@@ -1,0 +1,121 @@
+<<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>Crear una cuenta</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="estilos/estilos.css">
+	<link rel="stylesheet" href="estilos/estilos2.css">
+	<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    <script src="formulario.js"></script>
+</head>
+<body ng-app id="body">
+<header>
+    <div id="Imagen">
+	<img src="img/logo2.png"  >
+    </div>
+</header>
+
+<section id="contenedor">
+
+<div class="menu" id="menu">
+	<table>
+		<tr>
+			<td>Destacados</td>
+			<td>Juegos</td>
+			<td>Comprar</td>
+			<td>Vender</td>
+			<td>Videos</td>
+			<td>Foro</td>
+			<td>Noticias</td>
+			<td><input type="text"  class="form-control" placeholder="Buscar" name="BuscarU" ng-model="buscar.nombre" required  style="background: #2A3F5A; "></td>
+			
+		</tr>
+	</table>
+</div>
+<h1 id="titulo">Crear una cuenta</h1>
+<section id="sistemar">
+	<article id="registrarse">
+	<div id="bordes">
+     <form role = "form" name="formulario" style="width: 320px">
+     	<div class="form-group" ng-class="{'has-error': formulario.nombreU.$invalid, 'has-success': formulario.nombreU.$valid}">
+        <label id="texto">Introduce un usuario para tu cuenta</label>
+        <input type="text" class="form-control" placeholder="Usuario" name="nombreU" ng-model="usuario.nombre" required  style="background: #2A3F5A;">
+          </div>
+    <div class="form-group" ng-class="{'has-error': formulario.contra.$invalid, 'has-success': formulario.contra.$valid}">
+      <label id="texto">Introduce tu contraseña</label>
+      <input type="password" class="form-control" placeholder="Contraseña" name="contra" ng-model="contra.nombre" required  style="background: #2A3F5A;" ng-minlength="7" ng-maxlength="15">
+      <p class="help-block text-danger" ng-show="formulario.contra.$dirty && formulario.contra.$error.minlength">Minimo 7 caracteres</p>
+      <p class="help-block text-danger" ng-show="formulario.contra.$dirty && formulario.contra.$error.maxlength">Maximo 15 caracteres</p>
+      <p class="help-block text-danger" ng-show="formulario.contra.$dirty && formulario.contra.$error.required">Requerido</p>
+    </div>
+    <div class="form-group" ng-class="{'has-error': formulario.rcontra.$invalid, 'has-success': formulario.rcontra.$valid}">
+      <label id="texto">Introduce nuevamente tu contraseña</label>
+      <input type="password" class="form-control" placeholder="Contraseña" name="rcontra" ng-model="rcontra.nombre" required  style="background: #2A3F5A;" ng-minlength="7" ng-maxlength="15" ng-pattern="contra.nombre">
+
+      <p class="help-block text-danger" ng-show="formulario.rcontra.$dirty && formulario.rcontra.$error.minlength">Minimo 7 caracteres</p>
+      <p class="help-block text-danger" ng-show="formulario.rcontra.$error.maxlength">Maximo 15 caracteres</p>
+      <p class="help-block text-danger" ng-show="formulario.rcontra.$dirty && formulario.rcontra.$error.required">Requerido</p>
+      <p class="help-block text-danger" ng-show="formulario.rcontra.$dirty && formulario.rcontra.$error.pattern">Las contraseñas no coinciden</p>
+</div>
+     <div class="form-group" ng-class="{'has-error': formulario.email.$invalid, 'has-success': formulario.email.$valid}">
+    <label id="texto">Introduce tu dirección email</label>
+    <input type="email" class="form-control" placeholder="Email" name="email" ng-model="usuario.email" style="background: #2A3F5A"; required>
+    <p class="help-block text-danger" ng-show="formulario.email.$dirty && formulario.email.required">Este campo es requerido</p>
+    </div>
+    <div class="form-group" ng-class="{'has-error': formulario.remail.$invalid, 'has-success': formulario.remail.$valid}">
+    	<label id="texto">Introduce nuevamente tu dirección email</label>
+    	<input type="email" class="form-control" placeholder="Email" name="remail" ng-model="usuario.remail" style="background: #2A3F5A" required ng-pattern="usuario.email">
+    	<p class="help-block text-danger" ng-show="formulario.remail.$dirty && formulario.remail.required">Este campo es requerido</p>
+    	<p class="help-block text-danger" ng-show="formulario.remail.$dirty && formulario.remail.$error.pattern">Los emails no coinciden </p>
+    </div>
+       <div class="checkbox">
+      <label id="texto">
+        <input type="checkbox" name="aceptoU" ng-model="usuario.acepto" required> Aceptar terminos y condiciones.
+      </label>
+        </div>
+          <button class="btn btn-success" ng-disabled="forma.$invalid">Registrar</button>
+          <p>Hola</p>
+      </form>
+    </div>
+		
+	</article>
+
+	<article id="publicidad2">
+	<h2 id="titulo">Motivos para unirse</h2>
+  <div id="texto">
+  <li>Compra y descarga juegos</li>
+  <li>Únete a esta grande comunidad</li>
+  <li>Compra los últimos juegos del mercado</li>
+  <li>Puedes vender tus juegos</li>
+  <li>Juega en cualquier plataforma soportada</li>
+  </div>
+  <center>
+  <img src="img/logo.png" width="180px">
+  </center>
+		
+	</article>
+
+</section>
+</section>
+<footer id="texto">
+	<p>©2016 JSR Corporation. Todos los derechos reservados. Todas las marcas registradas pertenecen a sus respectivos dueños en Colombia y otros países.Todos los precios incluyen IVA (donde sea aplicable).</p>
+	<center>
+	<p>Política de Privacidad   |   Información legal   |   Acuerdo de Suscriptor a Steam   |   Reembolsos</p>
+
+	<p>  Acerca de Valve   |  Soluciones para empresas   |  Steamworks   |  Empleo   | 	</p>
+	</center>
+	<center>
+		<md-button><img src="img/facebook.png" style="width: 40px;"></md-button>
+		<md-button><img src="img/twitter.png" style="width: 40px;"></md-button>
+	</center>
+</footer>
+
+
+
+
+
+
+</body>
+</html>

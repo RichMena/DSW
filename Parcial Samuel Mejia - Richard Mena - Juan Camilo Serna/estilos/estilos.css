@@ -1,0 +1,125 @@
+
+
+#titulo{
+	color: #67B8C7;
+}
+#texto{
+	color: white;
+}
+
+#body{
+	background: #184151;
+}
+
+ 
+ header{
+ 	background: #171A21;
+ 	height: 110px;
+ 	margin-top: -1.4%;
+ }
+
+ #contenedor {
+ 	background: #184151;
+ 	height: auto;
+ 	width: 920px;
+ 	margin-left: auto;
+ 	margin-right: auto;
+}
+
+
+ #menu1{
+   background: #3C6C96;
+   height: auto;
+   width: 920px;  
+   margin-bottom:3%;
+   margin-top: 3%;
+   display:inline-block;
+   }
+
+#sistema{
+	background: #1B324A;
+	height: auto;
+	width: auto;
+	
+}
+#sistemar{
+    background: #1B324A;
+	height: auto;
+    width: 920px;
+}
+
+#login{
+   background: #1B324A;
+   height: 340px;
+   width: 32%;
+   display: inline-block;
+   vertical-align: top;
+   margin-left: 1%
+
+
+}
+
+#registro{
+    background: #1B324A;
+    height: 340px;
+    width: 32%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#publicidad{
+	background: #1B324A;
+	height: 340px;
+	width: 32%;
+	display: inline-block;
+	vertical-align: top;
+	margin-left: 2%;
+}
+#publicidad2{
+    background: #1B324A;
+	height: auto;
+	width: 30%;
+	display: inline-block;
+	vertical-align: top;
+	margin-left: 2%;
+	
+	
+}
+
+footer{
+	background: #121C28;
+	height: 150px;
+	margin-top: 2%;
+	}
+
+#boton{
+	
+	position:absolute;
+}
+
+#imagen{
+    width: 1000px;
+ 	margin-left: auto;
+ 	margin-right: auto;
+}
+
+#buscar{
+	width: 240px;
+	margin-left: auto;
+	float: left;
+ 	margin-top: 0.8%;
+ 	margin-right: 0.8%
+ 	display: inline-block;
+}
+
+#registrarse{
+	background: #1B324A;
+    height: auto;
+    width: 45%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#bordes{
+	margin: 3%;
+}

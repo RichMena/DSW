@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es" >
+<head>
+<meta charset="UTF-8">
+	<title>Buscar</title>
+	<link rel="stylesheet" href="estilos/style.css">
+</head>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js"></script>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.js"></script>
+	>
+	<link rel="stylesheet" href="estilos/estilos.css">
+	<link rel="stylesheet" href="estilos/estilos2.css">
+	<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+
+<body style="background-color: #202D3E; font-family: tahoma;">
+
+<div class="header">
+   <img src="img/globalheader_logo.png">
+   
+   <table >
+	 <tr>
+	    <td>TIENDA</td>
+		<td>COMUNIDAD</td>
+		<td>ACERCA DE</td>
+		<td>SOPORTE</td>
+	 </tr>
+  </table>
+  
+</div>
+
+
+
+
+<div ng-app= "myGameList" ng-controller= "ctrlGameList" 
+  >
+
+
+	 <div class="menu">
+	<table>
+		<tr>
+			<td><a href="">Destacados</a></td>
+			<td class="juegos"><a href="">Juegos</a></td>
+			<td><a href="">Noticias</a></td>
+			<td> <a href="">Comprar</td></a>
+			<td><a href="Listadeseos.html">Lista de deseos</a></td>
+			<td><a href="">Videos</a></td>
+			<td><a href="login.html">login</a></td>
+			
+			<td><div><input type="text" ng-model="test" style="background-color: #2A3F5A; ">  Buscar en la Tienda</input></div></td>
+		</tr>
+	</table>
+</div>
+<div style="color:#C7D5E0;"><h3 >Explorando productos con la etiqueta: {{myOrderBy}} {{test}}</h3></div>
+
+      <div class="filtros">
+
+		
+		<div class="filtertitle">Filtrar por Etiquetas Relacionadas</div>
+		<div class="filter-enabled">
+		<table>
+			
+			<tr><td ng-click="orderByMe('aventura')">Aventura</td></tr>
+			<tr><td ng-click="orderByMe('accion')">Accion</td></tr>
+			<tr><td ng-click="orderByMe('Carreras')">Carreras</td></tr>
+			<tr><td ng-click="orderByMe('Casual')">Casual</td></tr>
+			<tr><td ng-click="orderByMe('Estrategia')">Estrategia</td></tr>
+			<tr><td ng-click="orderByMe('Rpg')">Rpg</td></tr>
+			
+		</table></div>
+		
+		<div class="filtertitle">Filtrar por Categorias</div>
+		<div class="filter-enabled">
+		<table>
+			
+			<tr><td ng-click="orderByMe('Un Solo Jugador')">Un Solo Jugador</td></tr>
+			<tr><td ng-click="orderByMe('cooperativo')">Cooperativo</td></tr>
+			<tr><td ng-click="orderByMe('multijugador')">Multijugador</td></tr>
+			<tr><td ng-click="orderByMe('multijugador masivo')">Multijugador Masivo</td></tr>
+			
+			
+		</table></div>
+		<div>
+		<div class="filtertitle">Filtrar por Sistema Operativo</div>
+		<div  class="filter-enabled">
+		<table>
+			
+			<tr class="filter-enabled" ng-click="activar()"><td ng-click="orderByMe('Windows')">Windows</td></tr>
+			<tr class="filter-enabled" ng-click="activar()"><td ng-click="orderByMe('Mac')">MacOS</td></tr>
+			<tr><td ng-click="orderByMe('Linux')">Linux</td></tr>
+			
+			
+			
+		</table></div>
+		</div>
+		</div>
+
+		
+
+		
+		<div class="lista">
+		<div class="btn2"><button ng-click="order('-price')">Mayor Precio</button><button  ng-click="order('+price')">Menor precio</button><button  ng-click="orderByMe('')"  >Ultimos lanzamientos</button></div>
+		 <div class="list" ng-repeat="x in gameList | filter:myOrderBy|orderBy:myorder |filter:test"  >
+	  <img src="{{x.name}}.jpg" height="100px" width="80px">{{x.name}}: {{x.genero}},----  {{x.categoria}} <span style="float: right;padding-top: 2em; padding-right: 1em;"><button class="btn">Comprar</button></span>  <span style="float: right;padding-top: 3em;padding-left: 
+	  1em;padding-right: 1em; ">{{x.price|currency}}</span>
+	
+</div>
+</div>
+</div>
+
+
+<footer class="footer" id="texto">
+	<p>©2016 JSR Corporation. Todos los derechos reservados. Todas las marcas registradas pertenecen a sus respectivos dueños en Colombia y otros países.Todos los precios incluyen IVA (donde sea aplicable).</p>
+	<center>
+	<p>Política de Privacidad   |   Información legal   |   Acuerdo de Suscriptor a Steam   |   Reembolsos</p>
+
+	<p>  Acerca de Valve   |  Soluciones para empresas   |  Steamworks   |  Empleo   | 	</p>
+	</center>
+	<center>
+		<md-button><img src="img/facebook.png" style="width: 40px;"></md-button>
+		<md-button><img src="img/twitter.png" style="width: 40px;"></md-button>
+	</center>
+</footer>
+
+<script src="js/module.js"></script>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+
+  <!-- Angular Material Library -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+  
+  <!-- Your application bootstrap  -->
+  <script type="text/javascript">    
+    /**
+     * You must include the dependency on 'ngMaterial' 
+     */
+    angular.module('BlankApp', ['ngMaterial']);
+  </script>
+
+  <!-- Scripts-->
+</body>
+</html>

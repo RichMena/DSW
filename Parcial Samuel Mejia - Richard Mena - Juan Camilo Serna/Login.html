@@ -1,0 +1,159 @@
+<<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Angular Material style sheet -->
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+   <meta charset="UTF-8">
+
+	<title>Iniciar Sesión</title>
+	<link rel="stylesheet" href="estilos/estilos.css">
+	<link rel="stylesheet" href="estilos/estilos2.css">
+  <link rel="stylesheet" href="estilos/style.css">
+	<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+
+
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+ 
+
+
+    </head>
+
+<body ng-app="BlankApp" ng-cloak id="body">
+
+
+<div class="header">
+   <img src="img/globalheader_logo.png">
+   
+   <table >
+   <tr>
+      <td>TIENDA</td>
+    <td>COMUNIDAD</td>
+    <td>ACERCA DE</td>
+    <td>SOPORTE</td>
+   </tr>
+  </table>
+  
+</div>
+
+
+   <div class="menu">
+  <table>
+    <tr>
+      <td>Destacados</td>
+      <td class="juegos">Juegos</td>
+      <td>Noticias</td>
+      <td>Comprar</td>
+      <td>Vender</td>
+      <td>Videos</td>
+      <td>Foro</td>
+      
+      <td><div><input type="text" ng-model="test" style="background-color: #2A3F5A; ">  Buscar en la Tienda</input></div></td>
+    </tr>
+  </table>
+</div>
+
+<section id = "contenedor">
+
+
+<section id = "sistema">
+<article id ="login">
+    <div>
+ 
+<h2 id="titulo">Iniciar sesión</h2>
+<h5 id="texto">Con una cuenta existente</h5>
+<hr style="width: 250px">
+   <form role="form" name="forma" style="width: 250px">
+    <div class="form-group" ng-class="{'has-error': forma.nombreU.$invalid, 'has-success': forma.nombreU.$valid}">
+      <label for="inputNombre  " id="texto">Usuario</label>
+      <input id="inputNombre" type="text" class="form-control" placeholder="Nombre" name="nombreU" ng-model="usuario.nombre" required  style="background: #2A3F5A;">
+    </div>
+    <div class="form-group" ng-class="{'has-error': forma.contra.$invalid, 'has-success': forma.contra.$valid}">
+      <label id="texto">Contraseña</label>
+      <input type="password" class="form-control" placeholder="Contraseña" name="contra" ng-model="usuario.email" required  style="background: #2A3F5A;">
+      <p class="help-block text-danger" ng-show="forma.contra.$dirty && forma.contra.$error.required">Campo obligatorio</p>
+      
+    </div>
+    <button class="btn btn-success" ng-disabled="forma.$invalid">Iniciar sesión</button>
+    <article id="texto">
+	<md-button ng-href="https://www.davivienda.com/" target="_blank">¿Has olvidado la contraseña?</md-button>
+	</article>
+  </form>
+    </hr>
+  </div> 
+
+  </article>
+  
+
+<article id ="registro">
+<div style="width: 280px" style="height: 200px" style="text-align: center;">
+	<h2 id="titulo"> Crear</h2>
+	<h5 id="texto"> Una nueva cuenta gratis</h5>
+	<hr>
+	<h5 id="texto"> Unirse es gratis y su uso, sencillo. Continúa para crear tu cuenta</h5>
+	<div style="text-align: center;">
+	</div>
+	<form style="height: 340px">
+		<button id="boton" class="btn btn-success" value="Abrir" onclick="window.open('registro.html')">Crear cuenta</button>
+	</form>
+	</div>
+</article>
+ <article id ="publicidad">
+  <h2 id="titulo">Motivos para unirse</h2>
+  <div id="texto">
+  <li>Compra y descarga juegos</li>
+  <li>Únete a esta grande comunidad</li>
+  <li>Compra los últimos juegos del mercado</li>
+  <li>Puedes vender tus juegos</li>
+  <li>Juega en cualquier plataforma soportada</li>
+  </div>
+  <center>
+  <img src="img/logo.png" width="180px">
+  </center>
+ </article>
+</section>
+	
+</section>
+
+<footer id="texto">
+	<p>©2016 JSR Corporation. Todos los derechos reservados. Todas las marcas registradas pertenecen a sus respectivos dueños en Colombia y otros países.Todos los precios incluyen IVA (donde sea aplicable).</p>
+	<center>
+	<p>Política de Privacidad   |   Información legal   |   Acuerdo de Suscriptor a Steam   |   Reembolsos</p>
+
+	<p>  Acerca de Valve   |  Soluciones para empresas   |  Steamworks   |  Empleo   | 	</p>
+	</center>
+	<center>
+		<md-button><img src="img/facebook.png" style="width: 40px;"></md-button>
+		<md-button><img src="img/twitter.png" style="width: 40px;"></md-button>
+	</center>
+</footer>
+
+  
+
+   <!-- Angular Material requires Angular.js Libraries -->
+   <script src="js/module.js"></script>
+  
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+
+  <!-- Angular Material Library -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+  
+  <!-- Your application bootstrap  -->
+  <script type="text/javascript">    
+    /**
+     * You must include the dependency on 'ngMaterial' 
+     */
+    angular.module('BlankApp', ['ngMaterial']);
+  </script>
+
+  <!-- Scripts-->
+
+</body>
+</html>
